@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="images/blogo.png" type="image/png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Us - My Farm</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        /* If you want an initial animation for the "About Our Farm" title, you could add it here */
+        .page-title {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSlideUpTitle 1s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+        @keyframes fadeInSlideUpTitle {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body  >
+    <header class="sub-header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img 
+                        src="images/blogo.png" 
+                        alt="Swasti Farm - Organic Produce" 
+                        width="60" 
+                        height="20"
+                        loading="lazy"
+                    >
+                    <span class="farm-name">Swasti Farm</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="farminfo.html">Farm Info</a></li>
+                <li><a href="photo.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <h1 class="page-title">About Our Farm</h1>
+    </header>
+
+    <section class="section">
+        <h2 data-aos="fade-up">Our Story</h2>
+        <p data-aos="fade-up" data-aos-delay="100">The majority of the Nepalese people in the village have grown up experiencing agricultural life. Use of sickle, spade, ox, plow, etc to prepare, plant, and harvest the crops is common.  There are no sufficient plant specialists and experts. These factors play a significant role in better yielding.
+</p>
+        <p data-aos="fade-up" data-aos-delay="200">So, we officially established Swasti Krishi tatha Pashupanchi Farm in 2021 with the profound motive to enhance the yield by adopting modern equipment such as tractors, electric sprayers, etc, and digital platforms like AgroAi, Geokrishi.</p>
+        <br>
+        <h2 data-aos="fade-up">Our Philosophy</h2>
+        <ul data-aos="fade-up" data-aos-delay="100">
+            <li><strong>Leaning towards modernization: </strong> We believe in the power of embracing modern equipment and digital intelligence. From tractors and electric sprayers to advanced platforms like AgroAI and GeoKrishi, we actively seek and integrate technologies that enhance efficiency, optimize yields, and empower us with data-driven insights for smarter farming.</li>
+            <li><strong>Land & Ecosystem Health:</strong> Our land is our legacy. We prioritize the long-term health of our soil through methods like crop rotation and composting, ensuring responsible water use, and fostering a balanced relationship between our crops and livestock for a thriving farm environment.</li>
+            <li><strong>Community & Quality at Heart: </strong> Beyond our fields, we are committed to our community. We strive to be a reliable source of fresh, high-quality produce, harvested at its peak to ensure maximum flavor and nutritional value. </li>
+        </ul>
+<br>
+        <h2 data-aos="fade-up">Meet the Family</h2>
+        <div class="team-members">
+            <div class="team-member" data-aos="zoom-in" data-aos-delay="100">
+                <img src="images/chakra.png" alt="Farm owner 1">
+                <h3>Chakra Nidhi Kaduwal</h3>
+                <p>Founder & Head Farmer</p>
+            </div>
+            <div class="team-member" data-aos="zoom-in" data-aos-delay="200">
+                <img src="images/srijana.png" alt="Farm owner 2">
+                <h3>Srijana Kaduwal</h3>
+                <p>Farmer</p>
+            </div>
+        </div>
+       </section>
+
+    <footer>
+        <p>© 2025 Swasti Farm. All rights reserved.</p>
+        <p><a href="#top" class="back-to-top">Back to Top ↑</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1200, // Animation duration (in ms)
+            once: true,    // Whether animation should happen only once - while scrolling down
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,499 @@
+/* General styles */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif; /* A clean, modern font */
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+.farm-name {
+    font-size: 16px;
+    font-family: 'Comic Neue', cursive;
+    color: #816706;
+  }
+
+/* Logo Styles */
+.logo img {
+  height: auto; /* Maintain aspect ratio */
+  max-width: 180px; /* Control size */
+  transition: opacity 0.3s ease; /* Smooth hover effect */
+}
+
+.logo img:hover {
+  opacity: 0.9; /* Subtle hover effect */
+}
+
+/* For SVG logos (scales better) */
+.logo svg {
+  width: 180px;
+  height: auto;
+}
+
+a {
+  color: #27ae60; /* A fresh green for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #1a8a4e; /* Darker green on hover */
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #816706; /* Deep green/brown for headings */
+}
+h4 {
+      text-align: center;
+  margin-bottom: 1.5rem;
+  color: white; 
+}
+
+.section {
+  padding: 4rem 1rem;
+  max-width: 1000px; /* Wider content area */
+  margin: auto;
+}
+
+.section.light {
+  background-color: #f8f8f8; /* Light grey background for alternating sections */
+}
+
+p {
+  margin-bottom: 1rem;
+  text-align: justify; /* Justify text for a cleaner look */
+}
+
+ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem; /* Indent for custom bullet */
+  position: relative;
+}
+
+ul li::before {
+  content: '🌿'; /* Custom bullet point */
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn-small {
+  display: inline-block;
+  background-color: #27ae60;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-small:hover {
+  background-color: #1a8a4e;
+}
+
+/* --- Navigation Bar Styles (Consolidated & Consistent) --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+  background-color: #1a3c2e; /* SOLID DARK GREEN BACKGROUND FOR ALL NAVBARS */
+  position: sticky; /* Make it sticky for ALL pages */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: white; /* Logo color is always white in the dark navbar */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white; /* Default text color for navigation links (white on dark green) */
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  display: inline-block;
+  border-bottom: 2px solid transparent; 
+  padding-bottom: 5px; /* Space for border */
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  border-bottom: 2px solid #27ae60; /* Green underline on hover/active */
+  color: #27ae60; /* Green text on hover/active */
+}
+
+/* --- Hero section (Homepage specific) --- */
+.hero {
+  background: url('images/hero.jpg') no-repeat center center/cover;
+  height: 85vh; /* Taller hero section */
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column; /* Ensure content stacks vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: flex-start; /* Align content from the top for navbar */
+  text-align: center;
+}
+
+/* Overlay for hero content - should not cover the navbar now */
+.hero .overlay {
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+  height: 100%;
+  width: 100%;
+  padding: 0; /* No padding here as content has its own */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the hero content below navbar */
+  align-items: center;
+  padding-top: 5rem; /* Adjust this if the navbar height changes or for visual spacing */
+  box-sizing: border-box;
+}
+
+.hero-content {
+  /* No need for auto margins here, flexbox handles centering */
+  padding: 2rem; /* Add padding to hero content itself */
+}
+
+.hero-content h1 {
+  font-size: 4.5rem; /* Larger hero title */
+  margin-bottom: 0.8rem;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+}
+
+.hero-content p {
+  font-size: 1.8rem; /* Larger hero subtitle */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Sub-page Header (for about.html, farm.html, etc.) --- */
+.sub-header {
+  background-color: #1a3c2e; /* Solid dark green background for the sub-header section */
+  color: white;
+  padding-bottom: 2rem; /* Padding below the title */
+  text-align: center;
+  padding-top: 5rem; /* Ensure space for sticky navbar above the title */
+}
+
+/* Remove any specific navbar overrides within sub-header, as the general .navbar rules apply now */
+/*
+.sub-header .navbar {
+  background-color: transparent; // REMOVED
+  box-shadow: none; // REMOVED
+  position: static; // REMOVED
+}
+.sub-header .navbar .logo,
+.sub-header .nav-links li a {
+  color: white; // Already handled by general .navbar rules now
+}
+*/
+
+.page-title {
+  margin-top: 0; /* Adjust margin if needed, padding on .sub-header handles space */
+  font-size: 3.5rem; /* Larger title for sub-pages */
+  color: white;
+}
+
+/* Gallery (general style for images) */
+.gallery-grid, .gallery-preview, .gallery-grid-small {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for images */
+  gap: 1.5rem; /* Increased gap */
+  margin-top: 2rem;
+}
+
+.gallery-grid img, .gallery-preview img, .gallery-grid-small img {
+  width: 100%;
+  height: 250px; /* Fixed height for consistent look */
+  object-fit: cover; /* Crop image to fit */
+  border-radius: 10px; /* Rounded corners for images */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.gallery-grid img:hover, .gallery-preview img:hover, .gallery-grid-small img:hover {
+  transform: scale(1.03); /* Slightly enlarge on hover */
+}
+
+.gallery-grid-small {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.gallery-grid-small img {
+    height: 180px;
+}
+
+
+/* Blog Specific Styles */
+.blog-snippet, .blog-post {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.blog-post h3 {
+  text-align: left;
+  color: #1a3c2e;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post .post-meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.blog-post img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+
+/* Farm Info Specific Styles */
+.crop-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.crop-list h3 {
+  text-align: left;
+  color: #27ae60;
+  margin-bottom: 1rem;
+}
+
+/* Contact Specific Styles */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-item {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-item h3 {
+  text-align: left;
+  color: #1a3c2e;
+  margin-bottom: 1rem;
+}
+
+.google-map {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures iframe corners are rounded */
+}
+
+.google-map iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 15px;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.contact-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #1a3c2e;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: calc(100% - 20px); /* Adjust for padding */
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.contact-form button {
+  background-color: #27ae60;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #1a8a4e;
+}
+
+.form-note {
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Team Members on About Page */
+.team-members {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member {
+  text-align: center;
+  flex: 0 0 280px; /* Fixed width, no shrinking, can grow */
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.team-member img {
+  width: 150px; /* Circular image for profile */
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #27ae60; /* Green border around image */
+}
+
+.team-member h3 {
+  margin-bottom: 0.5rem;
+  color: #1a3c2e;
+}
+
+.team-member p {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navbar .logo {
+    margin-bottom: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .section {
+    padding: 3rem 0.8rem;
+  }
+
+  .gallery-grid, .gallery-preview, .gallery-grid-small, .crop-list, .event-list, .contact-info-grid, .team-members {
+    grid-template-columns: 1fr; /* Stack columns on small screens */
+  }
+
+  .blog-post img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .navbar .logo {
+    font-size: 1.5rem;
+  }
+}
